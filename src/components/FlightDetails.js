@@ -4,6 +4,7 @@ import SeatMap from './SeatMap'
 
 class FlightDetails extends React.Component {
 
+    
     render(){
 
       return(

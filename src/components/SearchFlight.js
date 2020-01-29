@@ -8,7 +8,6 @@ import {
 class SearchFlight extends React.Component {
 
   state = {
-
     departFrom: '',
     arriveAt: ''
   }
@@ -43,6 +42,7 @@ class SearchFlight extends React.Component {
           <input type="text" placeholder="arrive" onChange={this.handleChangeArr}/>
           <input type="submit" />
         </form>
+        <DisplayFlights searchDep={this.state.departFrom} searchArr={this.state.arriveAt}/>
       </div>
     ) // return
   } // render

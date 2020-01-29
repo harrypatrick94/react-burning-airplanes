@@ -1,5 +1,6 @@
 import React from 'react';
 import DisplayFlights from './DisplayFlights';
+import '../App.css';
 import {
   Link,
   HashRouter as Router
@@ -15,8 +16,9 @@ class SearchFlight extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
+    // const route = `/flights/search/${this.state.departFrom}/${this.state.arriveAt}`
     this.setState({search: true})
+    // this.props.history.push(route)
     // this.props.onSubmit(this.state.departFrom, this.state.arriveAt)
   } // submit
 
@@ -24,27 +26,33 @@ class SearchFlight extends React.Component {
   handleChangeDep = (event) => {
 
     this.setState({departFrom: event.target.value})
-
+    this.setState({search: false})
   }; // change dep
 
   handleChangeArr = (event) => {
 
     this.setState({arriveAt: event.target.value})
-
+    this.setState({search: false})
   }; //change dep
 
   render(){
 
     return (
-      <div>
-        <h1>SearchFlight here</h1>
+      <div  className="searchPage">
+        <div className="searchform">
+          <h1>SearchFlight here</h1>
+          <form className="formContents" onSubmit={this.handleSubmit}>
+            <input className="formInput" type="text" placeholder="depart" onChange={this.handleChangeDep}/>
+            <input className="formInput" type="text" placeholder="arrive" onChange={this.handleChangeArr}/>
+            <span className="formSubmit"><input  type="submit" /></span>
+          </form>
+        </div>
+        <br/>
 
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="depart" onChange={this.handleChangeDep}/>
-          <input type="text" placeholder="arrive" onChange={this.handleChangeArr}/>
-          <input type="submit" />
-        </form>
-        <DisplayFlights searchDep={this.state.departFrom} searchArr={this.state.arriveAt} search={this.state.search}/>
+        <div className="displayflights">
+
+          <DisplayFlights key="display" searchDep={this.state.departFrom} searchArr={this.state.arriveAt} search={this.state.search}/>
+        </div>
       </div>
     ) // return
   } // render

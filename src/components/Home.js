@@ -25,7 +25,7 @@ class Home extends React.Component {
     return(
       <div className="Home">
 
-        <h1>Home Buring Airlines</h1>
+        <h1>Home Burning Airlines</h1>
         <hr/>
         <Router>
           <Route exact path='/searchflight' component={SearchFlight}/>

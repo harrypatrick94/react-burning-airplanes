@@ -59,3 +59,50 @@
   justify-content: center;
   /* justify-content: space-around; */
 }
+
+.searchPage {
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.searchform {
+
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 2px 3px 2px;
+  background-color: #E6E6FA;
+  display: block;
+}
+
+.formContents {
+  height: 100px;
+  width: 450px;
+  padding: 15px;
+  margin: 30px 0;
+  display: flex;
+
+
+}
+
+.formInput {
+  height: 20px;
+  width: 40%;
+  margin: 0 5px;
+  position: relative;
+  top: 50px;
+  border-radius: 4px;
+}
+
+.formSubmit {
+  position: relative;
+  top: 52px;
+
+
+}
+
+.displayflights {
+  display: block;
+}

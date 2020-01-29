@@ -20,7 +20,7 @@ class DisplayFlights extends React.Component {
   flightMatch(){
     console.log('works');
     this.state.stateFlights.forEach(flight => {
-      if (flight.origin === this.props.searchDep && this.props.searchArr === flight.destination) {
+      if (flight.origin === this.props.searchDep && this.props.searchArr === flight.destination && this.props.search === true) {
         this.setState({matchFlights: [...this.state.matchFlights, flight]})
 
         console.log(flight.origin, flight.destination);
@@ -37,7 +37,7 @@ class DisplayFlights extends React.Component {
     this.fetchflights();
     // console.log(this.state.flights);
 
-    window.setTimeout(() => this.flightMatch(), 8000)
+    window.setTimeout(() => this.flightMatch(), 20000)
   }
 
 

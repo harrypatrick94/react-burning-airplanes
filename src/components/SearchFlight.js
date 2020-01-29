@@ -9,15 +9,17 @@ class SearchFlight extends React.Component {
 
   state = {
     departFrom: '',
-    arriveAt: ''
+    arriveAt: '',
+    search: false
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log("Depart from: ", this.state.departFrom);
+    this.setState({search: true})
     // this.props.onSubmit(this.state.departFrom, this.state.arriveAt)
   } // submit
+
 
   handleChangeDep = (event) => {
 
@@ -42,7 +44,7 @@ class SearchFlight extends React.Component {
           <input type="text" placeholder="arrive" onChange={this.handleChangeArr}/>
           <input type="submit" />
         </form>
-        <DisplayFlights searchDep={this.state.departFrom} searchArr={this.state.arriveAt}/>
+        <DisplayFlights searchDep={this.state.departFrom} searchArr={this.state.arriveAt} search={this.state.search}/>
       </div>
     ) // return
   } // render

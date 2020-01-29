@@ -4,7 +4,9 @@ const FLIGHTS_URL = 'http://localhost:3000/flights.json'
 class DisplayFlights extends React.Component {
 
     state = {
-      stateFlights: []
+      stateFlights: [],
+      matchFlights: []
+
     }
 
     fetchflights(){
@@ -18,7 +20,14 @@ class DisplayFlights extends React.Component {
   flightMatch(){
     console.log('works');
     this.state.stateFlights.forEach(flight => {
-      console.log(flight.origin, flight.destination);
+      if (flight.origin === this.props.searchDep && this.props.searchArr === flight.destination) {
+        this.setState({matchFlights: [...this.state.matchFlights, flight]})
+
+        console.log(flight.origin, flight.destination);
+        console.log('==========');
+        console.log(this.state.matchFlights);
+      }
+
     })
 
   }
@@ -28,7 +37,7 @@ class DisplayFlights extends React.Component {
     this.fetchflights();
     // console.log(this.state.flights);
 
-    // window.setInterval(() => this.flightMatch(), 5000)
+    window.setTimeout(() => this.flightMatch(), 8000)
   }
 
 
@@ -38,11 +47,11 @@ class DisplayFlights extends React.Component {
         <div className="DisplayFlights">
 
           <div className="displayflightdetails">
-            {this.state.stateFlights.length > 0
+            {this.state.matchFlights.length > 0
             ?
-            <div>{this.state.stateFlights.map(flight =>
+            <div>{this.state.matchFlights.map(flight =>
               <ul>
-                <li key={flight.id}>Fly from {flight.origin} to {flight.destination }</li>
+                <li key={flight.id}>Fly from {flight.origin} to {flight.destination } on {flight.date}</li>
               </ul>
             )}</div>
             :

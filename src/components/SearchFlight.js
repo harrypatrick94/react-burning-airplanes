@@ -41,7 +41,7 @@ class SearchFlight extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="depart" onChange={this.handleChangeDep}/>
           <input type="text" placeholder="arrive" onChange={this.handleChangeArr}/>
-          <input type="submit"/>
+          <input type="submit" />
         </form>
       </div>
     ) // return

@@ -13,7 +13,7 @@ class Home extends React.Component {
   render(){
 
     return(
-      <div ClassName="Home">
+      <div className="Home">
 
         <h1>Home Buring Airlines</h1>
         <hr/>

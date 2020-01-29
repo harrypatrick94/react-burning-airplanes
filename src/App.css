@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+/* Seat Map */
+.seatPlan {
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.row {
+  border: 1px solid black;
+  margin: 5px;
+  height: 40px;
+  width: 40px;
+}
+
+.seatPlan {
+
+
+}
+
+.columnA, .columnB, .columnC {
+  display: flex;
+  justify-content: center;
+  /* justify-content: space-around; */
+}

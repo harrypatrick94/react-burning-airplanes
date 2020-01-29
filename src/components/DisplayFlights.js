@@ -18,17 +18,18 @@ class DisplayFlights extends React.Component {
   }
 
   flightMatch(){
+    let allFlights = [];
     console.log('works');
     this.state.stateFlights.forEach(flight => {
       if (flight.origin === this.props.searchDep && this.props.searchArr === flight.destination && this.props.search === true) {
-        this.setState({matchFlights: [...this.state.matchFlights, flight]})
+        allFlights.push(flight)
 
         console.log(flight.origin, flight.destination);
         console.log('==========');
         console.log(this.state.matchFlights);
       }
-
-    })
+      this.setState({matchFlights: allFlights})
+    }) // flights match
 
   }
 
@@ -37,7 +38,7 @@ class DisplayFlights extends React.Component {
     this.fetchflights();
     // console.log(this.state.flights);
 
-    window.setTimeout(() => this.flightMatch(), 20000)
+    window.setInterval(() => this.flightMatch(), 3000)
   }
 
 
@@ -55,7 +56,7 @@ class DisplayFlights extends React.Component {
               </ul>
             )}</div>
             :
-            <h2>No flight</h2>
+            <p></p>
             }
           </div>
         </div>

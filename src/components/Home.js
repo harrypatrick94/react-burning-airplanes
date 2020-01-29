@@ -10,6 +10,16 @@ import {
 
 class Home extends React.Component {
 
+  state = {
+    searchDep: '',
+    searchArr: ''
+  }
+
+  saveSearch = (dep, arr) => {
+    this.setState({searchDep: dep})
+    this.setState({searchArr: arr})
+  }
+
   render(){
 
     return(

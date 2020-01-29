@@ -1,5 +1,9 @@
 import React from 'react';
-
+import DisplayFlights from './DisplayFlights';
+import {
+  Link,
+  HashRouter as Router
+} from 'react-router-dom'
 
 class SearchFlight extends React.Component {
 
@@ -13,6 +17,7 @@ class SearchFlight extends React.Component {
     event.preventDefault();
 
     console.log("Depart from: ", this.state.departFrom);
+    // this.props.onSubmit(this.state.departFrom, this.state.arriveAt)
   } // submit
 
   handleChangeDep = (event) => {

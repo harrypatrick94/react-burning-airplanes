@@ -4,12 +4,23 @@ import axios from 'axios';
 
 class Login extends React.Component {
 
-  fetch
+  state = {
+    password: "",
+
+  }
+
+  handlePassword = (event) => {
+
+    this.setState({password: event.target.value})
+  }
+
   handleClick = () => {
 
     const route = `/searchflight`
+    if (this.state.password === 'chicken') {
+      this.props.history.push(route)
+    }
 
-    this.props.history.push(route)
   }
   render(){
 
@@ -19,7 +30,7 @@ class Login extends React.Component {
           <h1>Login</h1>
           <form className="signInForm">
             <input type="text" className="formInputSign" placeholder="Username"/>
-            <input type="text" className="formInputSign" placeholder="Password"/>
+            <input type="text" className="formInputSign" placeholder="Password" onChange={this.handlePassword}/>
             <input type="submit" className="formInputSubmit" onClick={this.handleClick}/>
           </form>
         </div>

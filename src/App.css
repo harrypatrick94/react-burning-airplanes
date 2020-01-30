@@ -57,7 +57,8 @@ body {
 
 #heading {
   text-align: center;
-  text-shadow: 2px 2px #ff0000;
+  text-shadow: 2px 2px 2px #ff0000;
+  font-size: 50px;
 }
 
 .columnA, .columnB, .columnC {
@@ -66,7 +67,7 @@ body {
   /* justify-content: space-around; */
 }
 
-.searchPage, .displayFlights {
+.searchPage, .displayFlights, .signInPage {
 
   text-align: center;
   display: flex;
@@ -75,7 +76,7 @@ body {
 
 }
 
-.searchform {
+.searchform, .divSignInForm  {
 
   border: 1px solid black;
   border-radius: 20px;
@@ -86,7 +87,7 @@ body {
   width: 400px;
 
 }
-.formContents {
+.formContents  {
   height: 100px;
   width: 450px;
   padding: 15px;
@@ -101,14 +102,24 @@ body {
   width: 35%;
   margin: 0 5px;
   position: relative;
+  top: 49px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+ .formInputSign {
+  height: 20px;
+  width: 35%;
+  margin: 0 5px;
+  position: relative;
   top: 50px;
   border-radius: 4px;
   border: 1px solid black;
 }
 
-.formSubmit {
+.formSubmit, .formInputSubmit {
   position: relative;
-  top: 50px;
+  top: 49px;
 
 }
 
@@ -136,4 +147,15 @@ button {
 
 li {
   list-style-type: none;
+}
+
+.signInPage {
+
+  display: flex;
+}
+
+.divSignInForm {
+
+
+
 }

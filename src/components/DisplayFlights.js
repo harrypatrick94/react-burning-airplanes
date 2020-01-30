@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import '../App.css';
 import FlightDetails from './FlightDetails'
 import {
   Link,
@@ -17,9 +18,13 @@ class DisplayFlights extends React.Component {
 
     fetchflights(){
 
-  axios.get(FLIGHTS_URL)
-  .then(res => this.setState({stateFlights: res.data.flights}))
-  .catch(err => console.log(err))
+      axios.get(FLIGHTS_URL)
+      .then(res => {
+        // console.log(res.data);
+        this.setState({stateFlights: res.data
+        })
+        })
+      .catch(err => console.log(err))
 
   }
 
@@ -27,66 +32,60 @@ class DisplayFlights extends React.Component {
   flightMatch(){
     let allFlights = [];
     // console.log('works');
+    const searchedFlights = this.props.match.params.query.toLowerCase();
+    console.log(searchedFlights);
     this.state.stateFlights.forEach(flight => {
-      if (flight.origin === this.props.searchDep && this.props.searchArr === flight.destination && this.props.search === true) {
-        allFlights.push(flight)
 
-        // console.log(flight.origin, flight.destination);
-        // console.log(this.state.matchFlights);
+      let flightsJoin = [flight.origin, flight.destination]
+      flightsJoin = flightsJoin.join('').toLowerCase()
+      if (searchedFlights === flightsJoin) {
+        allFlights.push(flight)
       }
-      this.setState({matchFlights: allFlights})
+       this.setState({matchFlights: allFlights})
+
     }) // flights match
 
   }
 
-  runFunction = (id) => {
-    console.log(id);
-    // this.setState({showSeatPlan: true})
+  buttonSubmit = (id) => {
 
-}
+    // console.log();
+    const route = `/flightdetails/${id}`
+
+  // console.log('new route: ', route);
+
+    this.props.history.push(route)
+  }
+
 
   componentDidMount(){
 
-    this.fetchflights();
-    // console.log(this.state.flights);
+    this.fetchflights()
 
-    window.setInterval(() => this.flightMatch(), 3000)
+
+
+    window.setInterval(() => this.flightMatch(), 1000)
   }
 
 
     render(){
 
-      const searchTerm = this.props.match.params.query
       return(
-        <div className="DisplayFlights">
+        <div className="displayFlights">
 
           <div className="displayflightdetails">
             {this.state.matchFlights.length > 0
             ?
-            <div key="showFlights">{this.state.matchFlights.map(flight =>
-              <ul key="displayUL">
-                  <li key={flight.id}>Fly from {flight.origin} to {flight.destination } on {flight.date} <button type="button" >Book</button></li>
-              </ul>
-
+            <div key="showFlights" className="displayDiv">
+            {this.state.matchFlights.map(flight =>
+                <ul key="displayUL" className="displayUL">
+                    <li key={flight.id} className="displayFlightList">Fly from {flight.origin} to {flight.destination } on {flight.date} <button onClick={()=>{this.buttonSubmit(flight.id)}} className="buttonSelect">Select Flight</button></li>
+                </ul>
             )}</div>
             :
             <ul key="displayNoFlights">
-              <li>Test 1</li>
-              <li>Test 1</li>
-              <li>Test 1</li>
+              <li>Loading...</li>
             </ul>
-            }
-          </div>
-          <div>
-            {this.state.showSeatPlan === true
-            ?
-            <div>
-            <FlightDetails />
-            </div>
-            :
-            <div>
-            no seat
-            </div>
             }
           </div>
         </div>

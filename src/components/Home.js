@@ -2,6 +2,7 @@ import React from 'react';
 import SearchFlight from './SearchFlight'
 import DisplayFlights from './DisplayFlights'
 import FlightDetails from './FlightDetails'
+import '../App.css';
 import {
   Route,
   HashRouter as Router
@@ -25,14 +26,17 @@ class Home extends React.Component {
     return(
       <div className="Home">
 
-        <h1>Home Burning Airlines</h1>
-        <hr/>
-        <Router>
-          <Route exact path='/searchflight' component={SearchFlight}/>
-          <Route exact path='/displayflights/:query' component={DisplayFlights}/>
-          <Route exact path='/flightdetails' component={FlightDetails}/>
-        </Router>
-        <hr/>
+        <h1 id="heading">Home Burning Airlines</h1>
+
+        <div className="container">
+          <Router>
+            
+            <Route exact path='/searchflight' component={SearchFlight}/>
+            <Route exact path='/displayflights/:query' component={DisplayFlights}/>
+            <Route exact path='/flightdetails/:id' component={FlightDetails}/>
+          </Router>
+        </div>
+
       </div>
 
     ) // return

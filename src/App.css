@@ -49,9 +49,15 @@
   width: 40px;
 }
 
-.seatPlan {
+body {
+  margin: 0;
+  background-color: #FFE4E1;
 
+}
 
+#heading {
+  text-align: center;
+  text-shadow: 2px 2px #ff0000;
 }
 
 .columnA, .columnB, .columnC {
@@ -60,11 +66,12 @@
   /* justify-content: space-around; */
 }
 
-.searchPage {
+.searchPage, .displayFlights {
 
   text-align: center;
   display: flex;
   justify-content: center;
+
 
 }
 
@@ -74,35 +81,59 @@
   border-radius: 20px;
   box-shadow: 2px 3px 2px;
   background-color: #E6E6FA;
-  display: block;
-}
+  display: inline-block;
+  height: 200px;
+  width: 400px;
 
+}
 .formContents {
   height: 100px;
   width: 450px;
   padding: 15px;
   margin: 30px 0;
   display: flex;
-
+  border: 1px solid black;
 
 }
 
 .formInput {
   height: 20px;
-  width: 40%;
+  width: 35%;
   margin: 0 5px;
   position: relative;
   top: 50px;
   border-radius: 4px;
+  border: 1px solid black;
 }
 
 .formSubmit {
   position: relative;
-  top: 52px;
-
+  top: 50px;
 
 }
 
 .displayflights {
   display: block;
+}
+
+.displayDiv {
+
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 2px 3px 2px;
+  padding: 15px;
+  background-color: #E6E6FA;
+  margin: 10px;
+
+}
+
+button {
+  background-color: 	#FFF0F5;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 1px 2px 1px;
+}
+
+li {
+  list-style-type: none;
 }

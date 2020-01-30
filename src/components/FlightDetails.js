@@ -5,14 +5,15 @@ import SeatMap from './SeatMap'
 class FlightDetails extends React.Component {
 
 
-    render(){
 
+    render(){
+      const flightId = this.props.match.params.id
       return(
         <div className="FlightDetails">
           <h1>FlightDetails</h1>
-          
+
           <hr/>
-          <SeatMap />
+          <SeatMap flightid={flightId}/>
           <hr/>
         </div>
       ) // return

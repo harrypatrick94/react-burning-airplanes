@@ -53,6 +53,7 @@ class DisplayFlights extends React.Component {
     const route = `/flightdetails/${id}`
 
   // console.log('new route: ', route);
+  
     this.props.history.push(route)
   }
 

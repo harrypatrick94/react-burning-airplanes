@@ -29,17 +29,16 @@ class SearchFlight extends React.Component {
   handleSubmit = () => {
       const dep = this.state.departFrom
       const arr = this.state.arriveAt
-      let search = [dep, arr]
-      console.log(arr, dep, search);
 
-      search = search.join('')
+      let search = []
+      console.log(arr, dep, search);
+      // search = search.push(dep)
+      // search = search.push(arr)
+      // search = search.join('')
       console.log(search);
-      // this.setState({searchText: search})
-      console.log();
-      const route = `displayflights/${search}`
-      console.log(route);
+      const route = `/procedures/search/${this.state.searchText}`
     // console.log('new route: ', route);
-      this.props.history.push(route)
+    this.props.history.push(route)
   }
 
   render() {
@@ -49,11 +48,12 @@ class SearchFlight extends React.Component {
       <div>
       <br/>
         <input type="text" onChange={ this.handleInputDep }/>
-        <input type="text" onChange={ this.handleInputArr }/>
-        <button onClick={ this.handleSubmit }>Search</button>
+        <input type="text" onChange={ this.handleInput }/>
+        <button onClick={ this.handleSubmit }>Search Procedures</button>
       <br/>
       <hr/>
       <br/>
+        <p>I am a good dentist. Let me look in you mouth.</p>
 
       </div>
 

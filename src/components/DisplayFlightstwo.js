@@ -56,7 +56,6 @@ class DisplayFlights extends React.Component {
 
     render(){
 
-      const searchTerm = this.props.match.params.query
       return(
         <div className="DisplayFlights">
 

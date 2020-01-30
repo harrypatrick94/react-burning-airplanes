@@ -29,7 +29,7 @@ class Home extends React.Component {
         <hr/>
         <Router>
           <Route exact path='/searchflight' component={SearchFlight}/>
-          <Route exact path='/displayflights' component={DisplayFlights}/>
+          <Route exact path='/displayflights/:query' component={DisplayFlights}/>
           <Route exact path='/flightdetails' component={FlightDetails}/>
         </Router>
         <hr/>

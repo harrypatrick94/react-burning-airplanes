@@ -34,27 +34,28 @@ class SearchFlight extends React.Component {
 
       search = search.join('')
       console.log(search);
-      // this.setState({searchText: search})
-      console.log();
+      this.setState({searchText: search})
+      // console.log();
       const route = `displayflights/${search}`
       console.log(route);
     // console.log('new route: ', route);
-      this.props.history.push(route)
+    this.props.history.push(route)
   }
 
   render() {
 
     return (
 
-      <div>
-      <br/>
-        <input type="text" onChange={ this.handleInputDep }/>
-        <input type="text" onChange={ this.handleInputArr }/>
-        <button onClick={ this.handleSubmit }>Search</button>
-      <br/>
-      <hr/>
-      <br/>
-
+      <div className="searchPage">
+        <div className="searchform">
+          <h1>Search Flights</h1>
+            <form className="fromConents">
+            <input className="formInput" type="text" placeholder="depart" onChange={ this.handleInputDep }/>
+            <input className="formInput" type="text" placeholder="arrive" onChange={ this.handleInputArr }/>
+            
+            <span className="formSubmit"><input type="submit" onClick={ this.handleSubmit }/> </span>
+          </form>
+        </div>
       </div>
 
     ); // return

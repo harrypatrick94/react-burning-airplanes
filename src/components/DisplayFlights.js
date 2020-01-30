@@ -53,7 +53,11 @@ class DisplayFlights extends React.Component {
     const route = `/flightdetails/${id}`
 
   // console.log('new route: ', route);
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 01ee36b7af3e17b5fd89b04982a6321dd4439352
     this.props.history.push(route)
   }
 
@@ -61,9 +65,15 @@ class DisplayFlights extends React.Component {
   componentDidMount(){
 
     this.fetchflights()
+<<<<<<< HEAD
 
 
 
+=======
+
+
+
+>>>>>>> 01ee36b7af3e17b5fd89b04982a6321dd4439352
     window.setInterval(() => this.flightMatch(), 1000)
   }
 
